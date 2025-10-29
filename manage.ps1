@@ -1,14 +1,14 @@
 # ==============================================================================
 #                             *** 用户配置区域 ***
 # ==============================================================================
-
+# Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 # --- 任务定义 ---
 $Configurations = @(
     [PSCustomObject]@{
         Type        = 'ZipInstall'
         Description = "安装 uv 并配置环境变量"
         SourceFile  = "uv-x86_64-pc-windows-msvc.zip"
-        Destination = "$HOME\.local\bin"
+        Destination = "$HOME\.local\bin1"
     },
     [PSCustomObject]@{
         Type        = 'ConfigFile'
