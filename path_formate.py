@@ -3,25 +3,17 @@ import os
 import platform
 from pathlib import Path
 
-# ==============================================================================
-# █████████████████████████ 用户配置区 START █████████████████████████████
-#
-# --- 区域 1: 直接添加的完整路径 (常量路径) ---
-# 将不需要任何处理的完整路径放入此列表。
+
 DIRECT_PATHS = [
     # 示例: r"C:\Program Files\Git\bin",
 ]
 
-# --- 区域 2: 定义路径拼接的 "根目录" (占位符) ---
-# 在这里定义所有基础目录的占位符。
-# 值是您系统上的实际根目录路径。
+
 BASE_DIRECTORIES = {
     "CONDA_HOME": r"D:Software\miniconda3", # <-- 注意: 请确保这个路径是正确的
     "PYTHON_HOME": r"",
 }
 
-# --- 区域 3: 定义路径拼接的 "模板" ---
-# 使用正斜杠 `/`, pathlib 会自动为您的系统转换。
 PATH_TEMPLATES = [
     # Conda 相关路径
     "{CONDA_HOME}",
@@ -34,8 +26,6 @@ PATH_TEMPLATES = [
     "{PYTHON_HOME}",
     "{PYTHON_HOME}/Scripts",
 ]
-# █████████████████████████ 用户配置区 END ███████████████████████████████
-# ==============================================================================
 
 
 def generate_and_validate_paths() -> list[Path]:
